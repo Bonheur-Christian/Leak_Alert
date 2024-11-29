@@ -7,7 +7,7 @@ function Intro() {
         <p className="text-2xl font-medium text-gray-500 tracking-wider">
           PREVENTING WATER LEAKAGE
         </p>
-        <h1 className="text-5xl font-semibold font-montserrat w-[70%] leading-snug">
+        <h1 className="text-5xl font-semibold font-poppins w-[70%] leading-snug">
           Water wastage solved in simple way,
           <span className="text-5xl px-12 text-green-300 font-Mixed font-bold">
             Splash
@@ -18,10 +18,28 @@ function Intro() {
           down to at least 20% every Year. We will implement the system in rural
           areas in the first place.
         </p>
-        <div className="flex gap-48">
-          <button className="bg-[#23BDEE] hover:bg-[#4098b3] rounded-3xl px-6 text-white font-lato font-medium">
-            How It Works
+        <div className="flex gap-10">
+          <button className="bg-[#23BDEE] hover:bg-[#4098b3] rounded-3xl px-6 text-white font-poppins font-semibold">
+            How it works
           </button>
+          <div class="flex items-center space-x-[-14px]">
+            <img
+              src="/images/user1.png"
+              alt="User 1"
+              className="w-12 h-12 rounded-full"
+            />
+
+            <img
+              src="/images/user2.png"
+              alt="User 2"
+              className="w-12 h-12 rounded-full"
+            />
+
+            <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white text-sm font-semibold">
+              4k+
+            </div>
+          </div>
+
           <div>
             <p className="font-lato font-bold text-2xl">15K</p>
             <p className=" text-md font-lato font-medium text-gray-400">

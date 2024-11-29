@@ -1,80 +1,105 @@
-import React from "react";
-import { MdOutlineSensors } from "react-icons/md";
-import { SiTransmission } from "react-icons/si";
-import { FaMixcloud } from "react-icons/fa";
-import { FaChevronRight } from "react-icons/fa";
+import React, { useState } from "react";
+import { VscGraphLine } from "react-icons/vsc";
+import { PiDetectiveThin } from "react-icons/pi";
+import { LuMonitorDot } from "react-icons/lu";
+import { MdOutlineInsights } from "react-icons/md";
+import { HiOutlineBellAlert } from "react-icons/hi2";
+import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowUp } from "react-icons/io";
 
 function Features() {
+  const Features = [
+    {
+      icon: <VscGraphLine size={25} />,
+      feature: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatibus consequatur odit distinctio nulla dolorum, suscipit aut nam sed accusamus officiis hic, non repellendus eveniet corrupti. Ducimus inventore aut nam laborum?",
+    },
+    {
+      icon: <PiDetectiveThin size={25} />,
+      feature: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatibus consequatur odit distinctio nulla dolorum, suscipit aut nam sed accusamus officiis hic, non repellendus eveniet corrupti. Ducimus inventore aut nam laborum?",
+    },
+    {
+      icon: <LuMonitorDot size={25} />,
+      feature: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatibus consequatur odit distinctio nulla dolorum, suscipit aut nam sed accusamus officiis hic, non repellendus eveniet corrupti. Ducimus inventore aut nam laborum?",
+    },
+    {
+      icon: <MdOutlineInsights size={25} />,
+      feature: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatibus consequatur odit distinctio nulla dolorum, suscipit aut nam sed accusamus officiis hic, non repellendus eveniet corrupti. Ducimus inventore aut nam laborum?",
+    },
+    {
+      icon: <HiOutlineBellAlert size={25} />,
+      feature: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatibus consequatur odit distinctio nulla dolorum, suscipit aut nam sed accusamus officiis hic, non repellendus eveniet corrupti. Ducimus inventore aut nam laborum?",
+    },
+  ];
+  const [expandedIndex, setExpandedIndex] = useState(0);
+
+  const toggleExpand = (index) => {
+    setExpandedIndex((prevIndex) => (prevIndex === index ? 0 : index));
+  };
+
   return (
-    <div className="bg-[#F0F5EFBA] rounded-xl py-16 space-y-40">
-      <div className="space-y-6">
-        <button className="border-2 border-[#23BDEE] px-12 flex mx-auto text-[#23BDEE] hover:bg-[#23BDEE] hover:text-white rounded-2xl py-1 duration-500">
-          what we offer
+    <div className="py-32">
+      <div className="text-center space-y-6 ">
+        <button className="border-2 hover:font-semibold border-[#23BDEE] px-12 flex mx-auto text-[#23BDEE] hover:bg-[#23BDEE] hover:text-white rounded-2xl py-1 duration-500">
+          Our Features
         </button>
-        <p className="text-3xl font-lato font-normal text-center text-gray-800">
-          Proving Efficient and Accurate way of Water leakage detection
-        </p>
-        <p className="w-[40%] text-center mx-auto text-md text-gray-400">
-          With the help of real-time data we get from the environment, we are
-          able to allocate potential places that mostly experience leakage.
-          Basing on various factors data ia analyzed and used in decision making
+        <h1 className="text-2xl font-poppins ">
+          Introducing <span className="text-[#23BDEE]">Our</span> Features
+        </h1>
+        <p className="font-poppins text-gray-400 w-[50%] mx-auto">
+          Unique features of{" "}
+          <span className="text-[#23BDEE] text-md font-medium">Splash</span>{" "}
+          enable the system to respond with high accuracy and precision. This
+          enhance resources utilization and management.
         </p>
       </div>
-      <div className="flex justify-evenly ps-4">
-        <div className="bg-white rounded-2xl w-[30%] p-8 space-y-6 text-gray-800">
-          <div className="bg-gray-300 py-6 px-6 w-16 rounded-xl m-1">
-            <MdOutlineSensors />
-          </div>
-          <h1 className="font-lato text-2xl">On-Site Devices</h1>
-          <p className="text-md">
-            Devices on the site gathers real-time information from pipes. Data
-            collected here are analyzed to determine if there is leak or not.
-            These data are also used in decision making
-          </p>
-          <a
-            href="#"
-            className="text-[#23BDEE] flex items-center gap-4 hover:underline"
+      <div className="py-24 space-y-6">
+        {Features.map((item, index) => (
+          <div
+            key={index}
+            className="bg-gradient-to-r from-[#23BDEE]/5 to-[#23BDEE]/10 border border-[#23BDEE] rounded-xl p-6 space-y-6 duration-700"
           >
-            Read more
-            <FaChevronRight className="text-[#23BDEE]" />
-          </a>
-        </div>
-        <div className="bg-white rounded-2xl w-[30%] p-8 space-y-6 text-gray-800">
-          <div className="bg-gray-300 py-6 px-6 w-16 rounded-xl m-1">
-            <SiTransmission />
+            <div className="flex items-center justify-between">
+              <div className="flex gap-6 items-center">
+                {item.icon}
+                <h2 className="font-poppins text-gray-500 text-xl font-semibold">
+                  {item.feature}
+                </h2>
+              </div>
+              {expandedIndex === index ? (
+                <div
+                  className="rounded-full text-white p-1 bg-[#b7e5f3]"
+                  onClick={() => toggleExpand(index)}
+                >
+                  <IoIosArrowUp />
+                </div>
+              ) : (
+                <div
+                  className="rounded-full text-white p-1 bg-[#b7e5f3]"
+                  onClick={() => toggleExpand(index)}
+                >
+                  <IoIosArrowDown />
+                </div>
+              )}
+            </div>
+            {expandedIndex === index && (
+              <div>
+                <p className="font-poppins transition-all ease-in-out duration-700 text-gray-500">
+                  {item.description}
+                </p>
+              </div>
+            )}
           </div>
-          <h1 className="font-lato text-2xl">On-Site Devices</h1>
-          <p className="text-md">
-            Devices on the site gathers real-time information from pipes. Data
-            collected here are analyzed to determine if there is leak or not.
-            These data are also used in decision making
-          </p>
-          <a
-            href="#"
-            className="text-[#23BDEE] flex items-center gap-4 hover:underline"
-          >
-            Read more
-            <FaChevronRight className="text-[#23BDEE]" />
-          </a>
-        </div>
-        <div className="bg-white rounded-2xl w-[30%] p-8 space-y-6 text-gray-800">
-          <div className="bg-gray-300 py-6 px-6 w-16 rounded-xl m-1">
-            <FaMixcloud />
-          </div>
-          <h1 className="font-lato text-2xl">On-Site Devices</h1>
-          <p className="text-md">
-            Devices on the site gathers real-time information from pipes. Data
-            collected here are analyzed to determine if there is leak or not.
-            These data are also used in decision making
-          </p>
-          <a
-            href="#"
-            className="text-[#23BDEE] flex items-center gap-4 hover:underline"
-          >
-            Read more
-            <FaChevronRight className="text-[#23BDEE]" />
-          </a>
-        </div>
+        ))}
       </div>
     </div>
   );
