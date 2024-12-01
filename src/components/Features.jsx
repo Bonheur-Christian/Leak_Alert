@@ -47,9 +47,9 @@ function Features() {
   };
 
   return (
-    <div className="py-32">
+    <div className="pt-28 py-10">
       <div className="text-center space-y-6 ">
-        <button className="border-2 hover:font-semibold border-[#23BDEE] px-12 flex mx-auto text-[#23BDEE] hover:bg-[#23BDEE] hover:text-white rounded-2xl py-1 duration-500">
+        <button className="border hover:font-semibold border-[#23BDEE] px-12 flex mx-auto text-[#23BDEE] hover:bg-[#23BDEE] hover:text-white rounded-2xl py-1 duration-500">
           Our Features
         </button>
         <h1 className="text-2xl font-poppins ">

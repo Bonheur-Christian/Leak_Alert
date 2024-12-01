@@ -3,6 +3,8 @@ import Bar from "../components/LandingBar";
 import Intro from "../components/Intro";
 import WhatWeOffer from "../components/What_we_offer";
 import Features from "../components/Features";
+import Mission from "../components/Mission";
+import Contacts from "../components/Contacts";
 
 function Home() {
   return (
@@ -11,6 +13,8 @@ function Home() {
       <Intro />
       <WhatWeOffer />
       <Features />
+      <Mission />
+      <Contacts />
     </div>
   );
 }
