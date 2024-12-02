@@ -4,9 +4,12 @@ import { SiTransmission } from "react-icons/si";
 import { FaMixcloud } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 
-function WhatWeOffer() {
+function WhatWeOffer({ width: width }) {
   return (
-    <div className="bg-[#F0F5EFBA] rounded-xl py-16 space-y-40">
+    <div
+      className="bg-[#F0F5EFBA] rounded-xl py-16 space-y-40 mx-auto"
+      style={{ width: width }}
+    >
       <div className="space-y-10">
         <button className="border hover:font-semibold border-[#23BDEE] px-12 flex mx-auto text-[#23BDEE] hover:bg-[#23BDEE] hover:text-white rounded-2xl py-1 duration-500">
           what we offer

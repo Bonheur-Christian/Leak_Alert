@@ -1,6 +1,6 @@
 // import { MdOutlineFileDownload } from "react-icons/md";
 
-function Bar() {
+function Bar({ width: width }) {
   const Links = [
     { label: "Home", link: "/" },
     { label: "About", link: "#about" },
@@ -10,7 +10,7 @@ function Bar() {
   ];
 
   return (
-    <div className="pt-6">
+    <div className="pt-6 mx-auto" style={{ width: width }}>
       <nav className="flex justify-between items-center">
         <div>
           <img src="/svg/logo.svg" alt="This is Company logo" />

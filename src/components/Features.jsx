@@ -7,7 +7,7 @@ import { HiOutlineBellAlert } from "react-icons/hi2";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 
-function Features() {
+function Features({ width: width }) {
   const Features = [
     {
       icon: <VscGraphLine size={25} />,
@@ -47,7 +47,7 @@ function Features() {
   };
 
   return (
-    <div className="pt-28 py-10">
+    <div className="pt-28 py-10 mx-auto" style={{ width: width }}>
       <div className="text-center space-y-6 ">
         <button className="border hover:font-semibold border-[#23BDEE] px-12 flex mx-auto text-[#23BDEE] hover:bg-[#23BDEE] hover:text-white rounded-2xl py-1 duration-500">
           Our Features

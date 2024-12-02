@@ -1,8 +1,11 @@
 import React from "react";
 
-function Intro() {
+function Intro({ width: width }) {
   return (
-    <div className="flex justify-between py-24">
+    <div
+      className="flex justify-between py-24 mx-auto"
+      style={{ width: width }}
+    >
       <div className="pt-12 space-y-6">
         <p className="text-2xl font-medium text-gray-500 tracking-wider">
           PREVENTING WATER LEAKAGE

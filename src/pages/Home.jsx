@@ -8,13 +8,13 @@ import Contacts from "../components/Contacts";
 
 function Home() {
   return (
-    <div className="w-[80%] mx-auto">
-      <Bar />
-      <Intro />
-      <WhatWeOffer />
-      <Features />
-      <Mission />
-      <Contacts />
+    <div>
+      <Bar width="80%" />
+      <Intro width="80%" />
+      <WhatWeOffer width="80%" />
+      <Features width="80%" />
+      <Mission width="80%" />
+      <Contacts width="100%" />
     </div>
   );
 }
